@@ -1,0 +1,16 @@
+<!-- 
+    This macro used to write clean code to avoid repetation in code 
+ -->
+
+{% macro def_renderfield(field) -%}
+    {{field.label}}    
+    {{field}}
+    {% for error in field.errors %}
+        <p style="color: rgb(8, 217, 47);"> {{error}} </p>
+    {%endfor%}
+{%- endmacro -%}
+
+{% macro def_email(field) -%}
+    {{field.label}}
+    {{field}}
+{%- endmacro -%}

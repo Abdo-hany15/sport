@@ -1,5 +1,6 @@
 {%extends "style/base.html"%}
-
+{% from '_renderform.html' import def_renderfield %}
+{% from '_renderform.html' import def_email %}
 
 {%block title%}
 
@@ -14,15 +15,21 @@
 {%block body%}
     <form action="{{url_for('player.player_sign')}}" method='post'>
     {{form.csrf_token}}
-    {{form.player_name.label}}
+    <!-- {{form.player_name.label}}
     {{form.player_name}}
-    {% for error in form.player_id.errors %}
-        <p style="color: brown;"> {{error}} </p>
+    {% for error in form.player_name.errors %}
+        <p style="color: rgb(8, 217, 47);"> {{error}} </p>
     {%endfor%}
     {{form.player_id.label}}
     {{form.player_id}}
-    {{form.email.label}}
-    {{form.email}}
+    {% for error in form.player_id.errors %}
+        <p style="color: rgb(21, 48, 143);"> {{error}} </p>
+    {%endfor%} -->
+    {{def_renderfield(form.player_name)}}
+    {{def_renderfield(form.player_id)}}
+    {{def_email(form.email)}}
+    <!-- {{form.email.label}}
+    {{form.email}} -->
     <input type="submit" value="Sign">
 </form>
-{%endblock%}
+{%endblock%} 

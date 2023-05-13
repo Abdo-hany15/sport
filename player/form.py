@@ -16,9 +16,11 @@ def my_custom_length(form, field):
 class PlayerForm(FlaskForm):
  # NOTE player_name is a field
     player_name = StringField(label="playerName", validators=[
-                              DataRequired(), my_custom_length])
+        DataRequired(), Length(min=5, max=20, message="Enter your name abdo")])
     player_id = PasswordField(label="playerNaumber",
-                              validators=[DataRequired()])
+                              validators=[DataRequired(), Length(min=1, max=2)])
     # To show message of length go to player html
     email = EmailField(label="playerEmail", validators=[DataRequired(), Email(
-        message="Please inter your email", granular_message=False, check_deliverability=False, allow_smtputf8=True, allow_empty_local=False)])
+        message="Please inter your email", granular_message=False,
+        check_deliverability=False,
+        allow_smtputf8=True, allow_empty_local=False)])
