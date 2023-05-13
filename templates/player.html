@@ -1,0 +1,28 @@
+{%extends "style/base.html"%}
+
+
+{%block title%}
+
+{%endblock%}
+
+
+{%block head%}
+'This is the body of player'
+{%endblock%}
+
+
+{%block body%}
+    <form action="{{url_for('player.player_sign')}}" method='post'>
+    {{form.csrf_token}}
+    {{form.player_name.label}}
+    {{form.player_name}}
+    {% for error in form.player_id.errors %}
+        <p style="color: brown;"> {{error}} </p>
+    {%endfor%}
+    {{form.player_id.label}}
+    {{form.player_id}}
+    {{form.email.label}}
+    {{form.email}}
+    <input type="submit" value="Sign">
+</form>
+{%endblock%}

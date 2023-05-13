@@ -1,0 +1,25 @@
+
+{% extends 'style/base.html' %}
+
+{%block title%}
+
+{%endblock%}
+
+
+{%block head%}
+
+{%endblock%}
+
+
+{%block body%}
+<h1>This is page player</h1>
+<form action="{{url_for('club.club_enroll')}}" method="post">
+{{ form.csrf_token }}
+{{form.name.label}}
+{{form.name}}
+<br>
+{{form.code.label}}
+{{form.code}}
+<input type="submit" value="sign">  
+</form>
+{%endblock%}
