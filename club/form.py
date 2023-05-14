@@ -3,5 +3,5 @@ from wtforms import StringField, PasswordField
 
 
 class ClubForm(FlaskForm):
-    name = StringField(label="PlayerName")
-    code = PasswordField(label="Password")
+    name = StringField(label="clubname")
+    league_division = PasswordField(label="Password")

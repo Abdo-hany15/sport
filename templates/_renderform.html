@@ -1,12 +1,12 @@
 <!-- 
     This macro used to write clean code to avoid repetation in code 
- -->
 
+-->
 {% macro def_renderfield(field) -%}
     {{field.label}}    
     {{field}}
     {% for error in field.errors %}
-        <p style="color: rgb(8, 217, 47);"> {{error}} </p>
+        <p style="color: rgb(169, 17, 17);"> {{error}} </p>
     {%endfor%}
 {%- endmacro -%}
 
@@ -14,3 +14,16 @@
     {{field.label}}
     {{field}}
 {%- endmacro -%}
+
+<!-- {{form.player_name.label}}
+{{form.player_name}}
+{% for error in form.player_name.errors %}
+    <p style="color: rgb(8, 217, 47);"> {{error}} </p>
+{%endfor%}
+{{form.player_id.label}}
+{{form.player_id}}
+{% for error in form.player_id.errors %}
+    <p style="color: rgb(21, 48, 143);"> {{error}} </p>
+{%endfor%} -->
+<!-- {{def_renderfield(form.player_name)}}
+{{def_renderfield(form.player_id)}} -->

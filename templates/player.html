@@ -1,6 +1,5 @@
-{%extends "style/base.html"%}
-{% from '_renderform.html' import def_renderfield %}
-{% from '_renderform.html' import def_email %}
+
+{% extends 'style/base.html' %}
 
 {%block title%}
 
@@ -8,28 +7,20 @@
 
 
 {%block head%}
-'This is the body of player'
+
 {%endblock%}
 
 
 {%block body%}
-    <form action="{{url_for('player.player_sign')}}" method='post'>
-    {{form.csrf_token}}
-    <!-- {{form.player_name.label}}
-    {{form.player_name}}
-    {% for error in form.player_name.errors %}
-        <p style="color: rgb(8, 217, 47);"> {{error}} </p>
-    {%endfor%}
-    {{form.player_id.label}}
-    {{form.player_id}}
-    {% for error in form.player_id.errors %}
-        <p style="color: rgb(21, 48, 143);"> {{error}} </p>
-    {%endfor%} -->
-    {{def_renderfield(form.player_name)}}
-    {{def_renderfield(form.player_id)}}
-    {{def_email(form.email)}}
-    <!-- {{form.email.label}}
-    {{form.email}} -->
-    <input type="submit" value="Sign">
+<h1>This is page player</h1>
+<form action="{{url_for('player.player_sign')}}" method="post">
+{{ form.csrf_token }}
+{{form.player_name.label}}
+{{form.player_name}}
+<br>
+{{form.salary.label}}
+{{form.salary}}
+<input type="submit" value="sign">  
 </form>
-{%endblock%} 
+{%endblock%}
+
